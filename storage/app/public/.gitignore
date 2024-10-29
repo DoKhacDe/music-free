@@ -1,0 +1,10 @@
+*
+!.gitignore
+!preview-images/
+!product-images/
+!product-variants/
+!fonts/
+!product-content/
+!shopify/
+!categories/
+!upload-images/
