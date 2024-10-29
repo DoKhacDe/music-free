@@ -1,3 +1,4 @@
+<x-layouts.app :absolute-header="true">
     <div style="display: flex; flex-wrap: wrap">
         @foreach(range(1, 100) as $i)
             <img style=""
@@ -5,3 +6,4 @@
                  alt="">
         @endforeach
     </div>
+</x-layouts.app>
