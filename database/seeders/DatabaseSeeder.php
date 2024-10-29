@@ -2,15 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Actions\Products\SaveVariants;
-use App\Actions\Products\SyncTags;
-use App\Models\Category;
-use App\Models\Product;
+use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -33,6 +28,9 @@ class DatabaseSeeder extends Seeder
             'email'    => 'admin@sweb.vn',
             'password' => Hash::make('123456'),
         ]);
-
+        Profile::create([
+            'name'     => 'Profile 1',
+            'slug'    => 'profile-1',
+        ]);
     }
 }

@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.customer-card {
+.profile-card {
     transition: transform 0.3s ease;
 }
 
-.customer-card:hover {
+.profile-card:hover {
     transform: translateY(-5px);
 }
 

@@ -3,21 +3,21 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $customers = Customer::all();
-        return view('home.index')->with(['customers' => $customers]);
+        $profiles = Profile::all();
+        return view('home.index')->with(['profiles' => $profiles]);
     }
 
     public function show(Request $request)
     {
         $slug = $request->slug;
-        $profile = Customer::where('slug', $slug)->first();
+        $profile = Profile::where('slug', $slug)->first();
         return view('home.music')->with([
             'profile' => $profile ?? null,
         ]);
@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         $slug = $request->slug;
 
-        $profile = Customer::where('slug', $slug)->first();
+        $profile = Profile::where('slug', $slug)->first();
         return view('home.search')->with([
             'profile' => $profile ?? null,
         ]);

@@ -2,32 +2,24 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CustomerResource\Pages;
-use App\Models\Customer;
+use App\Filament\Resources\ProfileResource\Pages;
+use App\Models\Profile;
 use Filament\Forms;
-use Filament\Forms\Components\Field;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Table;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
-class CustomerResource extends Resource
+class ProfileResource extends Resource
 {
-    protected static ?string $model = Customer::class;
+    protected static ?string $model = Profile::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
-    public $uuid;
-
-    public function mount()
-    {
-        $this->uuid = Str::uuid();
-    }
 
     public static function form(Form $form): Form
     {
@@ -79,9 +71,9 @@ class CustomerResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCustomers::route('/'),
-            'create' => Pages\CreateCustomer::route('/create'),
-            'edit' => Pages\EditCustomer::route('/{record}/edit'),
+            'index' => Pages\ListProfiles::route('/'),
+            'create' => Pages\CreateProfile::route('/create'),
+            'edit' => Pages\EditProfile::route('/{record}/edit'),
         ];
     }
 }
